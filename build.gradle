@@ -1,0 +1,14 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+}
+
+task deploy(type: Exec) {
+    commandLine 'kubectl', 'create', '-f', 'zipkin.yaml'
+}
+
+task undeploy(type: Exec) {
+    commandLine 'kubectl', 'delete', '-f', 'zipkin.yaml'
+}
+

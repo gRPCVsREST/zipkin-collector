@@ -5,7 +5,7 @@ buildscript {
 }
 
 task deploy(type: Exec) {
-    commandLine 'kubectl', 'create', '-f', 'zipkin.yaml'
+    commandLine 'kubectl', 'apply', '-f', 'zipkin.yaml'
 }
 
 task undeploy(type: Exec) {
